@@ -1,36 +1,48 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# SOP Kiosk - Priemyselná Onboardingová Platforma
 
-## Getting Started
+Moderná PWA aplikácia pre zaškoľovanie operátorov vo výrobnej hale so slabým signálom, AI tvorbou štandardných operačných postupov (SOP) a offline synchronizáciou.
 
-First, run the development server:
+## Architektúra & Tech Stack
+- **Frontend**: Next.js 15+ (App Router), React 19, Tailwind CSS v4, Lucide Icons, Material Symbols
+- **Dizajnový systém**: `SOP Kiosk Industrial Modern` generovaný cez **Stitch MCP** (Project ID `3737632796510031215`)
+- **Databáza & Auth**: Supabase (PostgreSQL, Row Level Security)
+- **Offline Storage**: Dexie.js (IndexedDB) + Service Worker cache
+- **Médiá & Videá**: Cloudflare R2 + FFmpeg pipeline
+- **AI Pipeline**: OpenAI Whisper (prepis hlasu) + GPT-4o-mini (štruktúrovanie, kroky, BOZP, kvízy a preklady)
 
+## Režimy aplikácie
+1. **Riadiaci pult majstra (`/`)**:
+   - Prehľad liniek a taktového času
+   - Monitorovanie aktívnych zaškolení a vyriešených SOS incidentov
+   - Štatistiky úspešnosti a kľúčové priemyselné metriky
+2. **AI Tvorba a Editor SOP (`/sops/editor`)**:
+   - Nahrávanie 45s videa z linky
+   - Automatický Whisper prepis a rozdelenie na kroky cez GPT-4o-mini
+   - Časová os a strih slučiek cez FFmpeg
+   - Nastavenie fotiek OK vs. NOK a kontrolných otázok
+3. **Katalóg SOP & Auditné verzie (`/sops`)**:
+   - Nemenné verziovanie SOP pre normy ISO 9001 a IATF 16949
+   - Schvaľovací proces a história zmien
+4. **Operátori, Kiosky & Identifikácia (`/operators`)**:
+   - Správa operátorov a párovanie zamestnaneckých kariet (NFC / QR menovky)
+   - Autorizácia a monitorovanie tabletových kioskov
+5. **Kiosk operátora pri linke (`/kiosk`)**:
+   - Dotykové rozhranie prispôsobené pre prácu v rukaviciach (minimálna veľkosť tlačidiel 64–80px)
+   - Prihlásenie pípnutím karty (Web NFC) alebo prednou kamerou (QR kód)
+   - Prehrávanie videa v slučke, 3 odrážky postupu, BOZP výstražný pás
+   - Kvíz OK vs. NOK diel a kontrolná otázka
+   - SOS núdzové tlačidlo s okamžitým privolaním majstra
+   - 100% offline prevádzka s lokálnym ukladaním cez Dexie.js
+
+## Spustenie lokálne
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Premenné prostredia (.env.local)
+```env
+NEXT_PUBLIC_SUPABASE_URL=https://xzmceuctjmfpdetxlvlo.supabase.co
+NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=sb_publishable_pFIeMep6_OaZs01hWkZuog_sYiWeOfL
+NEXT_PUBLIC_SUPABASE_ANON_KEY=sb_publishable_pFIeMep6_OaZs01hWkZuog_sYiWeOfL
+```

@@ -1,0 +1,40 @@
+{
+  "stitch_mcp": {
+    "server_name": "stitch",
+    "project_name": "projects/3737632796510031215",
+    "project_id": "3737632796510031215",
+    "design_system_name": "SOP Kiosk Industrial Modern",
+    "device_type": "DESKTOP",
+    "source_specification": "analyza_mvp_onboarding_platforma.md",
+    "screens": [
+      {
+        "id": "5f565e941f5f462f82163d31fd3d5dbc",
+        "title": "Prehľad & Riadenie linky",
+        "description": "Dashboard majstra / vedúceho výroby pre sledovanie stavu liniek a zaškolení",
+        "dimensions": "2560x3530",
+        "screenshot_url": "https://lh3.googleusercontent.com/aida/AEtjO1VPOEdmwT05Jhvr6mA7kEsvVoKwr90U6sNabhmKzas19NB_AaYOih1kOVo10Q9J79U7b1ykdGt73I-TuJoquKaZb1tU2IhtILzJVbrmnuipfzgWLW3QP_L1z6mnSmdukKYLjARyLhXgfxWwQltCGt-bTVgL0KltK3oZvwk6DnfNi2PZ3zLmJ9y5ipwK1KkgLmzrmjUD_PgFWGYJkZlHqqt7_q7Mvz-nGE3ejjRASfpNRkd4JX_he_HNeMM"
+      },
+      {
+        "id": "20aff3c546ec486a8e6af4176e634d4f",
+        "title": "AI Tvorba a Editor SOP z videa",
+        "description": "Rozhranie majstra na nahrávanie videa, AI prepis Whisper, štruktúrovanie GPT-4o-mini a editor krokov",
+        "dimensions": "2560x3376",
+        "screenshot_url": "https://lh3.googleusercontent.com/aida/AEtjO1WLptZZc8OxRUjRmHA4Kua5s9EsMQpohG8PpLzxNJcKi5HjlWpqgdMbYxvFf2hOyGgPrQBf0k7RU9HR7OrAKdJYCNJkhuYHF54LJLgwpGGAc0b5dxsbB_c3Thhc0kFriKHTiBzl1mmFzpHuRGGnakfuvtMudsP3U200GYQsatVlUWDgDd2kKFXxYSj9AI4oVgQtJ1yvMPN5_Epnp0-RHFW-yl52HV6LMS9amli057yKQoAM07kVLIeyY4E"
+      },
+      {
+        "id": "00aa2c43362f493c9745f37b7569adfd",
+        "title": "Katalóg SOP & Auditné verzie",
+        "description": "Katalóg pracovných postupov s nemenným verziovaním a históriou zmien pre ISO/IATF audit",
+        "dimensions": "2560x2742",
+        "screenshot_url": "https://lh3.googleusercontent.com/aida/AEtjO1Ub7woU7VAdcE9Ch6U1gz6zaUJ-IclcEYQIsD24NPyet_ECts2jKgBM-8fIZktGOz2Ui6up8pBrGZ6unFEMzOmVMk9VjEmAgakH1IbcV2zxlfRBV7j8pXnrLALmrdra9SULUvTuHuDzuISpB93QlijKFghJHFeZKe12RfZjoLP-k3VstsggyFc3yq2IVj_ITn7tKlX0anAuwV9N3_qZnfeH-fo9-o1tkmrSKvfqBPKXBeJda3HDAyLFaw"
+      },
+      {
+        "id": "fd591847bec6458aa175e3c4596ffdf6",
+        "title": "Operátori, Kiosky & Identifikácia",
+        "description": "Správa operátorov, párovanie NFC kariet, generovanie QR kódov a správa tabletov",
+        "dimensions": "2560x2048",
+        "screenshot_url": "https://lh3.googleusercontent.com/aida/AEtjO1V_TebHQFdAYySQ0hY0QsKp97QWg9qcyu8klnhQbpGmFok_TkJ5HO1UFcx5lqAlpG0Un4HzNiTdtThxzk7adAOn07qun4xfsCfuzKLFQPMUC4X2isdhPW2QrccX3W8TEQI_vGbgkVWesgExj4TZI-5AjJ93Xer-KIIvuU-GoqJHCYn8yk3ZW64tzlEdgMImTJBIRKiD-MQCUsFlanyZKcplJOwThYoLK9gHsSGYP8nYX7PRkZ9bbokWQB8"
+      }
+    ]
+  }
+}
